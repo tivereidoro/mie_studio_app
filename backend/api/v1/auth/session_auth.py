@@ -36,7 +36,9 @@ class SessionAuth:
         try:
             user = session.get('user', None)
             # Refresh token
-            user['idToken'] = firebase.auth.refresh(user['refreshToken'])
+            user = firebase.auth.refresh(user['refreshToken'])
+            if not user.get('localId'):
+                user['localId'] = user.get('userId')
             session['user'] = user
         except Exception as e:
             print(f"Unkown Server error -> {e}")

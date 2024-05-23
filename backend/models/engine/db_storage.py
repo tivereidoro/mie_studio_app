@@ -7,10 +7,11 @@ from backend.api.v1 import firebase
 from backend.models.base import Base
 from backend.models.user import User
 from backend.models.playlist import Playlist
+from backend.models.track import Track
 
 
 classes = {
-        "Base": Base, "User": User, "Playlist": Playlist
+        "Base": Base, "User": User, "Playlist": Playlist, "Track": Track
         }
 
 

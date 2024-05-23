@@ -1,4 +1,4 @@
-#!/usr/bin/enb python3
+#!/usr/bin/env python3
 """Playlist module
 """
 from backend.models.base import Base
