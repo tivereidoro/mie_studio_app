@@ -2,6 +2,7 @@
 """Module for Track views
 """
 import os
+from mutagen import File as MutagenFile
 from backend import models
 from flask import jsonify, abort, request, make_response, session
 from backend.api.v1.views import app_views, BASE_URI
@@ -30,11 +31,17 @@ def upload_track() -> str:
         if not data[attr]:
             return jsonify({"Error": f"Missing parameter -> {attr}"}), 400
 
+    # automatic title
     if not request.form.get('title'):
         data['title'] = data['payload'].filename
     else:
         data['title'] = request.form.get('title')
+    # automatic duration
+    audio = MutagenFile(data['payload'].stream)
+    if audio and hasattr(audio, 'info'):
+        data['duration'] = audio.info.length
 
+    # Determine path
     data['extension'] = '.' + data['payload'].filename.split('.')[-1]
     track = Track(uploader_id=session.get('user').get('localId', ''),
                   title=data['title'],
@@ -42,6 +49,7 @@ def upload_track() -> str:
                   extension=data['extension'])
 
     path = '/'.join([str(os.getenv('AUDIO_DIR')), (track.id + data['extension'])])  # noqa: E501
+
     token = session.get('user').get('idToken', '')
     firebase.media_store.child(path).put(data['payload'], token)
     # Save track meta data
