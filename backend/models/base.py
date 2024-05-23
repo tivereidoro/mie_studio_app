@@ -51,6 +51,17 @@ class Base():
         self.updated_at = datetime.utcnow()
         return models.storage.save(self, token)
 
+    def update(self, token):
+        """Update instance
+            - token: user access token
+        """
+        try:
+            del self.created_at
+        except Exception:
+            pass
+        self.updated_at = datetime.utcnow()
+        return models.storage.update(self, token)
+
     def delete(self, token):
         """Delete the current instance
         Parameters:

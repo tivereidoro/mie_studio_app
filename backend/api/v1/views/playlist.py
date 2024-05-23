@@ -39,6 +39,34 @@ def create_new_playlist() -> str:
         "playlist": playlist.to_json()}), 200
 
 
+@app_views.route('/playlists/<string:playlist_id>', methods=['PUT'])
+def update_playlist(playlist_id) -> str:
+    """PUT /playlists
+    Parameters:
+        - title: string
+        - tracks: []    # An array of strings that are track_ids
+    """
+    attrs = ['title', 'tracks']
+    data = request.get_json()
+    for attr in attrs:
+        if attr not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{attr} is missing"}), 400
+    if not is_list_of_strings(data['tracks']):
+        return jsonify({
+            "success": False,
+            "message": "tracks must be a non-empty list of strings"}), 400
+    playlist = Playlist(id=playlist_id, title=data['title'],
+                        tracks=data['tracks'])
+    playlist.update(session.get('user').get('idToken', ''))
+    return jsonify({
+        "success": True,
+        "message": "Playlist successfully updated",
+        "uri": f"{BASE_URI}/playlists/{playlist.id}",
+        "playlist": playlist.to_json()}), 200
+
+
 @app_views.route('/playlists/<string:playlist_id>', methods=['GET'])
 def get_playlist_info(playlist_id) -> str:
     """GET /playlists/<playlist_id>

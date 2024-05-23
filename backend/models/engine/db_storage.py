@@ -30,7 +30,7 @@ class realtime_DBStorage:
 
     def save(self, obj, token):
         """
-        Save an object: for new objects or updating existing ones
+        Save an object: for new objects existing ones
         Parameters:
             - obj: object to add in database
             - token: user access token
@@ -39,6 +39,22 @@ class realtime_DBStorage:
         s_table = str(obj.__tablename__)
         try:
             self.db.child(s_table).child(obj.id).set(obj.to_json(), token)
+        except Exception as e:
+            print("Error in creating new object:", e)
+            return False
+        return True
+
+    def update(self, obj, token):
+        """
+        Update an object: for updating existing ones
+        Parameters:
+            - obj: object to add in database
+            - token: user access token
+        return: True if successful, else False
+        """
+        s_table = str(obj.__tablename__)
+        try:
+            self.db.child(s_table).child(obj.id).update(obj.to_json(), token)
         except Exception as e:
             print("Error in creating new object:", e)
             return False
