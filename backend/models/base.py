@@ -49,7 +49,7 @@ class Base():
             - token: user access token
         """
         self.updated_at = datetime.utcnow()
-        return models.storage.new(self, token)
+        return models.storage.save(self, token)
 
     def delete(self, token):
         """Delete the current instance

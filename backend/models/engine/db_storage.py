@@ -28,9 +28,9 @@ class realtime_DBStorage:
         """
         self.db = firebase.db
 
-    def new(self, obj, token):
+    def save(self, obj, token):
         """
-        Create a new object
+        Save an object: for new objects or updating existing ones
         Parameters:
             - obj: object to add in database
             - token: user access token
