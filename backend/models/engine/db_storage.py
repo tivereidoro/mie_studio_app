@@ -6,10 +6,11 @@ from typing import Any
 from backend.api.v1 import firebase
 from backend.models.base import Base
 from backend.models.user import User
+from backend.models.playlist import Playlist
 
 
 classes = {
-        "Base": Base, "User": User,
+        "Base": Base, "User": User, "Playlist": Playlist
         }
 
 
