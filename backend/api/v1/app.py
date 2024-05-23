@@ -37,6 +37,7 @@ def do_auth():
             '/api/v1/stat*',    # status, stats
             '/api/v1/signup/',
             '/api/v1/login/',
+            '/api/v1/reset-password/'
         ]
     if not auth.require_auth(request.path, excluded_paths=excluded_paths):
         return
