@@ -73,7 +73,7 @@ class realtime_DBStorage:
             return False
 
         try:
-            self.db.child(cls.__tablename__).child(id).delete(token)
+            self.db.child(cls.__tablename__).child(id).remove(token)
         except Exception as e:
             print("Error in deleting object:", e)
             return False
