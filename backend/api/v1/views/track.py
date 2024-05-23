@@ -8,7 +8,30 @@ from flask import jsonify, abort, request, make_response, session
 from backend.api.v1.views import app_views, BASE_URI
 from backend.models.track import Track
 from backend.api.v1 import firebase
+from backend.lib.utility import get_track_path
 from pprint import pprint
+
+
+@app_views.route('/tracks/<string:track_id>', methods=['GET'])
+def get_download_url(track_id) -> str:
+    """GET /tracks/<track_id>
+    Note: The 'uri' in the response will allow one to progressively download
+    and play the track in the browser
+    """
+    token = session.get('user').get('idToken', '')
+    track = models.storage.get(Track, track_id,
+                               session.get('user').get('idToken'))
+    if not track:
+        return jsonify({
+            "success": False,
+            "message": "Track not found"}), 404
+    path = get_track_path(track)
+    uri = firebase.media_store.child(path).get_url(token)
+    return jsonify({
+        "success": True,
+        "message": "Download URL successfully fetched",
+        "track": track.to_json(),
+        "uri": uri}), 200
 
 
 @app_views.route('/tracks', methods=['POST'])
