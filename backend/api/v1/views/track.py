@@ -12,6 +12,22 @@ from backend.lib.utility import get_track_path
 from pprint import pprint
 
 
+@app_views.route('/tracks', methods=['GET'])
+def get_all_tracks_info() -> str:
+    """GET /tracks
+    """
+    token = session.get('user').get('idToken', '')
+    tracks = firebase.db.child(Track.__tablename__).get(token).val()
+    for track_id in tracks.keys():
+        tracks[track_id]['uri'] = f"{BASE_URI}/tracks/{track_id}"
+    return jsonify({
+        "success": True,
+        "message": "All tracks fetched successfully",
+        "next": "Follow the uri of any track you want to play",
+        "uri": f"{BASE_URI}/tracks",
+        "tracks": tracks}), 200
+
+
 @app_views.route('/tracks/<string:track_id>', methods=['GET'])
 def get_download_url(track_id) -> str:
     """GET /tracks/<track_id>
@@ -73,7 +89,7 @@ def upload_track() -> str:
                   duration=data['duration'],
                   extension=data['extension'])
 
-    path = '/'.join([str(os.getenv('AUDIO_DIR')), (track.id + data['extension'])])  # noqa: E501
+    path = get_track_path(track)
 
     token = session.get('user').get('idToken', '')
     firebase.media_store.child(path).put(data['payload'], token)
