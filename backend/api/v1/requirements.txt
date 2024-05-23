@@ -1,0 +1,6 @@
+wheel
+python-dotenv
+flask
+flask_cors
+pyrebase4
+bcrypt
