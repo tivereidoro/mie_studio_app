@@ -35,6 +35,7 @@ def create_new_playlist() -> str:
     return jsonify({
         "success": True,
         "message": "Playlist created successfully",
+        "uri": f"{BASE_URL}/playlists/{playlist.id}",
         "playlist": playlist.to_json()}), 200
 
 
@@ -47,5 +48,5 @@ def get_playlist_info(playlist_id) -> str:
     return jsonify({
         "success": True,
         "message": "Playlist info fetched successfully",
-        "uri": f"{BASE_URL}/playlists/{playlist_id}",
+        "uri": f"{BASE_URL}/playlists/{playlist.id}",
         "playlist": playlist.to_json()}), 200
