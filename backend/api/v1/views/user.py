@@ -82,7 +82,6 @@ def get_session_information() -> str:
     """GET /login
     """
     user = session.get('user')
-    print(f"user: {user}")  # test
     try:
         user_obj = models.storage.get(User, user['localId'], user['idToken'])
     except Exception as e:
