@@ -9,6 +9,26 @@ from backend.api.v1 import firebase
 from pprint import pprint
 
 
+@app_views.route('/reset-password', methods=['POST'])
+def send_password_reset_email() -> str:
+    """POST /reset-password
+    Parameters:
+        - email: string
+    Note: mail is sent only if there is an existing user with this email
+    """
+    attrs = ['email']
+    data = request.get_json()
+    for attr in attrs:
+        if attr not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{attr} is missing"}), 400
+    firebase.auth.send_password_reset_email(data['email'])
+    return jsonify({
+        "success": True,
+        "message": "Next step: Check your mails"}), 200
+
+
 @app_views.route('/signup', methods=['POST'])
 def create_user() -> str:
     """POST /signup
@@ -76,6 +96,7 @@ def login_user() -> str:
         "message": "Login successful",
         "user": user_obj.to_json()
             }), 200
+
 
 @app_views.route('/login', methods=['GET'])
 def get_session_information() -> str:
