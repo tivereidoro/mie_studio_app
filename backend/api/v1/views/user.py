@@ -112,3 +112,11 @@ def get_session_information() -> str:
             "message": "Could not log in user. Check login credentials"}), 401
 
     return jsonify({"success": True, "user": user_obj.to_json()}), 200
+
+
+@app_views.route('/logout', methods=['DELETE'])
+def logout_user_from_current_session() -> str:
+    """DELETE /logout
+    """
+    session.clear()
+    return '', 204
