@@ -3,7 +3,7 @@
 """
 from backend import models
 from flask import jsonify, abort, request, make_response, session
-from backend.api.v1.views import app_views, BASE_URL
+from backend.api.v1.views import app_views, BASE_URI
 from backend.models.playlist import Playlist
 from backend.api.v1 import firebase
 from backend.lib.utility import is_list_of_strings
@@ -35,7 +35,7 @@ def create_new_playlist() -> str:
     return jsonify({
         "success": True,
         "message": "Playlist created successfully",
-        "uri": f"{BASE_URL}/playlists/{playlist.id}",
+        "uri": f"{BASE_URI}/playlists/{playlist.id}",
         "playlist": playlist.to_json()}), 200
 
 
@@ -48,7 +48,7 @@ def get_playlist_info(playlist_id) -> str:
     return jsonify({
         "success": True,
         "message": "Playlist info fetched successfully",
-        "uri": f"{BASE_URL}/playlists/{playlist.id}",
+        "uri": f"{BASE_URI}/playlists/{playlist.id}",
         "playlist": playlist.to_json()}), 200
 
 
@@ -60,5 +60,5 @@ def get_all_playlists_info() -> str:
     return jsonify({
         "success": True,
         "message": "All playlists fetched successfully",
-        "uri": f"{BASE_URL}/playlists",
+        "uri": f"{BASE_URI}/playlists",
         "playlists": playlist.val()}), 200
