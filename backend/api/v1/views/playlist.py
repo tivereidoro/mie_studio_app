@@ -50,3 +50,15 @@ def get_playlist_info(playlist_id) -> str:
         "message": "Playlist info fetched successfully",
         "uri": f"{BASE_URL}/playlists/{playlist.id}",
         "playlist": playlist.to_json()}), 200
+
+
+@app_views.route('/playlists', methods=['GET'])
+def get_all_playlists_info() -> str:
+    """GET /playlists
+    """
+    playlist = firebase.db.child(Playlist.__tablename__).get(session.get('user').get('idToken', ''))    # noqa: E501
+    return jsonify({
+        "success": True,
+        "message": "All playlists fetched successfully",
+        "uri": f"{BASE_URL}/playlists",
+        "playlists": playlist.val()}), 200
