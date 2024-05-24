@@ -8,8 +8,38 @@ from flask import jsonify, abort, request, make_response, session
 from backend.api.v1.views import app_views, BASE_URI
 from backend.models.track import Track
 from backend.api.v1 import firebase
-from backend.lib.utility import get_track_path
+from backend.lib.utility import get_track_path, is_list_of_strings
 from pprint import pprint
+
+
+@app_views.route('/tracks', methods=['DELETE'])
+def delete_tracks() -> str:
+    """DELETE /tracks
+    JSON parameter:
+        - tracks: An array of track ids
+    Note: This URL is idempotent
+    """
+    attrs = ['tracks']
+    data = request.get_json()
+    for attr in attrs:
+        if attr not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{attr} is missing"}), 400
+    if not is_list_of_strings(data['tracks']):
+        return jsonify({
+            "success": False,
+            "message": "tracks must be a non-empty list of strings"}), 400
+
+    token = session.get('user').get('idToken', '')
+    for track_id in data['tracks']:
+        if len(track_id):
+            models.storage.delete(Track, track_id, token)
+    tracks = firebase.db.child(Track.__tablename__).get(token)
+    return jsonify({
+        "success": True,
+        "message": f"{len(data['tracks'])} Track(s) deleted successfully",
+        "tracks": tracks.val()}), 200
 
 
 @app_views.route('/tracks', methods=['GET'])

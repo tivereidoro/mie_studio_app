@@ -116,8 +116,8 @@ def delete_playlist() -> str:
     token = session.get('user').get('idToken', '')
     for playlist_id in data['playlists']:
         success = models.storage.delete(Playlist, playlist_id, token)
-    playlist = firebase.db.child(Playlist.__tablename__).get(session.get('user').get('idToken', ''))    # noqa: E501
+    playlist = firebase.db.child(Playlist.__tablename__).get(token)
     return jsonify({
         "success": success,
         "message": f"{len(data['playlists'])} Playlist(s) deleted successfully",
-        "playlist": playlist.val()}), 200
+        "playlists": playlist.val()}), 200
