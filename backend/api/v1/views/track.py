@@ -34,7 +34,10 @@ def delete_tracks() -> str:
     token = session.get('user').get('idToken', '')
     for track_id in data['tracks']:
         if len(track_id):
-            models.storage.delete(Track, track_id, token)
+            track = models.storage.get(Track, track_id, token)
+            if track:
+                models.storage.delete(Track, track_id, token)
+                firebase.media_store.delete(get_track_path(track), token)
     tracks = firebase.db.child(Track.__tablename__).get(token)
     return jsonify({
         "success": True,
