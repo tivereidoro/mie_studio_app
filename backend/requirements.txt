@@ -5,3 +5,4 @@ flask_cors
 pyrebase4
 bcrypt
 mutagen
+gunicorn
