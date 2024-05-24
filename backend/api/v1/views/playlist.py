@@ -73,6 +73,10 @@ def get_playlist_info(playlist_id) -> str:
     """
     playlist = models.storage.get(Playlist, playlist_id,
                                   session.get('user').get('idToken', ''))
+    if not playlist:
+        return jsonify({
+            "success": False,
+            "message": "Playlist not found"}), 404
     return jsonify({
         "success": True,
         "message": "Playlist info fetched successfully",
