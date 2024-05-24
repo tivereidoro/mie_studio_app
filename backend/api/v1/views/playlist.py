@@ -92,17 +92,32 @@ def get_all_playlists_info() -> str:
         "playlists": playlist.val()}), 200
 
 
-@app_views.route('/playlists/<string:playlist_id>', methods=['DELETE'])
-def delete_playlist(playlist_id) -> str:
-    """DELETE /playlists/<playlist_id>
+@app_views.route('/playlists', methods=['DELETE'])
+def delete_playlist() -> str:
+    """DELETE /playlists
+    JSON Prameters:
+        - playlists: An array of Playlists to delete
     Note: This endpoint is idempotent
     Thus, deleting a non-existing object will return the same result
     as deleting an existing object
     """
-    success = models.storage.delete(Playlist, playlist_id,
-                                    session.get('user').get('idToken', ''))
+    attrs = ['playlists']
+    data = request.get_json()
+    for attr in attrs:
+        if attr not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{attr} is missing"}), 400
+    if not is_list_of_strings(data['playlists']):
+        return jsonify({
+            "success": False,
+            "message": "playlists must be a non-empty list of strings"}), 400
+
+    token = session.get('user').get('idToken', '')
+    for playlist_id in data['playlists']:
+        success = models.storage.delete(Playlist, playlist_id, token)
     playlist = firebase.db.child(Playlist.__tablename__).get(session.get('user').get('idToken', ''))    # noqa: E501
     return jsonify({
         "success": success,
-        "message": "Playlist deleted successfully",
+        "message": f"{len(data['playlists'])} Playlist(s) deleted successfully",
         "playlist": playlist.val()}), 200
