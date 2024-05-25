@@ -123,5 +123,5 @@ def delete_playlist() -> str:
     playlist = firebase.db.child(Playlist.__tablename__).get(token)
     return jsonify({
         "success": success,
-        "message": f"{len(data['playlists'])} Playlist(s) deleted successfully",
+        "message": f"{len(data['playlists'])} Playlist(s) deleted successfully",    # noqa: E501
         "playlists": playlist.val()}), 200
