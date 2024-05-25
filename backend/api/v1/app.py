@@ -84,8 +84,13 @@ def unauthorized(error) -> str:
 @app.errorhandler(403)
 def forbidden(error) -> str:
     """Denied access to a forbidden resource
+    Login required
     """
-    return jsonify({"error": "Forbidden"}), 403
+    from backend.api.v1.views import BASE_URI
+
+    return jsonify({
+        "error": "Forbidden",
+        "next": f"{BASE_URI}/login"}), 403
 
 
 if __name__ == "__main__":
