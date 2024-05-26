@@ -61,6 +61,43 @@ def get_all_tracks_info() -> str:
         "tracks": tracks}), 200
 
 
+@app_views.route('/tracks/specified', methods=['GET'])
+def get_specified_tracks_only() -> str:
+    """
+    JSON parameter:
+        - tracks: [] An array of tracks ID to get information on
+    NB: The download URL of the tracks are not returned, just information
+    on the track
+    """
+    attrs = ['tracks']
+    data = request.get_json()
+    for attr in attrs:
+        if attr not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{attr} is missing"}), 400
+    if not is_list_of_strings(data['tracks']):
+        return jsonify({
+            "success": False,
+            "message": "tracks must be a non-empty list of strings"}), 400
+
+    token = session.get('user').get('idToken', '')
+    tracks = {}
+    for track_id in data['tracks']:
+        if len(track_id):
+            data = models.storage.get(Track, track_id, token)
+            if data:
+                tracks[track_id] = data.to_json()
+                tracks[track_id]['uri'] = f"{BASE_URI}/tracks/{track_id}"
+
+    return jsonify({
+        "success": True,
+        "message": "All specified tracks fetched successfully",
+        "next": "Follow the uri of any track you want to play",
+        "uri": f"{BASE_URI}/tracks/specified",
+        "tracks": tracks}), 200
+
+
 @app_views.route('/tracks/<string:track_id>', methods=['GET'])
 def get_download_url(track_id) -> str:
     """GET /tracks/<track_id>
