@@ -99,9 +99,10 @@ def get_specified_tracks_only() -> str:
 
 
 @app_views.route('/tracks/<string:track_id>', methods=['GET'])
-def get_download_url(track_id) -> str:
+def get_playback_uri(track_id) -> str:
     """GET /tracks/<track_id>
-    Note: The 'uri' in the response will allow one to progressively download
+    Note: The 'playback_uri' in the response will allow one to \
+            progressively download
     and play the track in the browser
     """
     token = session.get('user').get('idToken', '')
@@ -113,11 +114,13 @@ def get_download_url(track_id) -> str:
             "message": "Track not found"}), 404
     path = get_track_path(track)
     uri = firebase.media_store.child(path).get_url(token)
+    track_json = track.to_json()
+    track_json['playback_uri'] = uri
     return jsonify({
         "success": True,
-        "message": "Download URL successfully fetched",
-        "track": track.to_json(),
-        "uri": uri}), 200
+        "message": "Playback URI successfully fetched",
+        "track": track_json,
+        "uri": f"{BASE_URI}/tracks/{track_id}"}), 200
 
 
 @app_views.route('/tracks', methods=['POST'])
