@@ -1,10 +1,11 @@
 import React from 'react'
-import Navbar from '../Navbar'
+import NavBar from '../NavBar'
 
 export default function LandingPage() {
     return (
         <div>
-            <Navbar />
+            <NavBar />
+
             <p>
                 Welcome to the landing page of the online music app.
             </p>
