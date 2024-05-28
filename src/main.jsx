@@ -9,6 +9,7 @@ import ErrorPage from './components/ErrorPage';
 import './index.css';
 import LandingPage from './components/homepage/LandingPage';
 import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 
 // Create routers for app navigation
@@ -16,7 +17,9 @@ import LoginPage from "./components/LoginPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoginPage />
+      {/* <LoginPage /> */}
+      <SignupPage />
+
       {/* <Routes>
         <Route path="/" element={<LoginPage />} />
       </Routes> */}
