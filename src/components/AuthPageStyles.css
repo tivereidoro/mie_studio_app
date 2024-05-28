@@ -1,6 +1,5 @@
-/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-/*===== VARIABLES CSS =====*/
+
 :root {
   /*===== Colores =====*/
   --first-color: #1A73E8;
@@ -29,7 +28,7 @@ h1 {
 }
 
 /*===== FORM =====*/
-.loginPage {
+.form_container {
   display: flex;
   justify-content: center;
   align-items: center;
