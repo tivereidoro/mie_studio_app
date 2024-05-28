@@ -17,3 +17,11 @@ Welcome to our Last run! - The portfolio project of the Webstack specialization 
 ### ••• MORE DETAILS HERE SHORTLY •••
 ---
 ![footer_banner](https://github.com/tivereidoro/assets/assets/105525310/ecb91fd3-aa63-4126-978e-d4ce63087e2d)
+
+
+## ... PROJECT TITLE...
+
+MIESTUDIO APP
+
+## ... PROJECT DESCRIPTION ...
+MIESTUDIO APP is an only music player designed to attend to the emotional, mental and soulish need of man.
