@@ -1,0 +1,8 @@
+# Environment
+.env
+venv/
+
+# Temporary files
+*.swp
+~*
+__pycache__/
