@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Login.css";
-import bgImage from "../assets/earpiece.jpg"
+import bgImage from "../assets/music.jpg"
 
 export default function LoginPage() {
     return (
