@@ -1,5 +1,5 @@
 import React from 'react';
-import "./AuthPageStyles.css";
+import "./AuthPageStyle.css";
 
 export default function LoginPage() {
     return (

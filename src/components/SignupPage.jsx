@@ -1,5 +1,5 @@
 import React from 'react';
-import "./AuthPageStyles.css";
+import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
 
 export default function LoginPage() {
