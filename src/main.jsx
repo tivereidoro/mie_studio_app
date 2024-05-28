@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import Player from "./components/Player";
 
 
 // Create routers for app navigation
@@ -13,8 +14,9 @@ import SignupPage from "./components/SignupPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoginPage />
-      <SignupPage />
+      <Player />
+      {/* <LoginPage />
+      <SignupPage /> */}
     </BrowserRouter>
   </React.StrictMode>
 );
