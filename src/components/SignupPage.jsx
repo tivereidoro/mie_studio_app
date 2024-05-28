@@ -5,7 +5,7 @@ import bgImage from "../assets/earpiece.jpg"
 export default function LoginPage() {
     return (
         <div className='loginPage'>
-            <img src={bgImage} alt="login image" class="login__img"></img>
+            <img src={bgImage} alt="login image" class="login__img" />
 
             <form action="" className="form">
                 <h1 className="form__title">Sign Up</h1>
