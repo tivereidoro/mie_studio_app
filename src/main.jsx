@@ -13,7 +13,7 @@ import SignupPage from "./components/SignupPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <LoginPage /> */}
+      <LoginPage />
       <SignupPage />
     </BrowserRouter>
   </React.StrictMode>

@@ -1,9 +1,13 @@
 import React from 'react';
 import "./AuthPageStyle.css";
+import bgImage from "../assets/music.jpg"
 
 export default function LoginPage() {
     return (
         <div className='form_container'>
+            <img src={bgImage} alt="login image" class="login__img" />
+
+
             <form action="" className="form">
                 <h1 className="form__title">Log In</h1>
 
