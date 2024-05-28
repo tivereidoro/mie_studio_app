@@ -1,3 +1,11 @@
-main {
-    background: #000;
+.player_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* position: relative; */
+}
+
+.player_ui {
+
 }
