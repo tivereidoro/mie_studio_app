@@ -32,3 +32,14 @@ MIESTUDIO APP has a landing page to welcome the users, a login or sign up page f
 ## ... TECHNOLOGIES USED ...
 Frontend : React.js
 Backend : Node.js
+
+## ... CONCEPTS LEARNED ...
+React.js
+---- React basics
+---- How to create react app with npx create-react-app name
+---- React use state
+---- The render method
+
+Node.js
+---- Node.js basics
+---- 
