@@ -40,8 +40,15 @@ MIESTUDIO APP has the following pages:
         It displays with an image of the artist after a song is clicked and starts playing.
 
 ## ... TECHNOLOGIES USED ...
-Frontend : React.js
-Backend : Node.js
+    
+    Frontend:
+        React.js
+
+    Backend:
+        Python
+        Flask
+        Firebase
+        Vite
 
 ## ... CONCEPTS LEARNED ...
 React.js
