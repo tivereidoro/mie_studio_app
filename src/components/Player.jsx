@@ -1,24 +1,14 @@
 import React from 'react'
 import './playerStyle.css'
-import bgImage from "../assets/music.jpg"
+import bgImage from "../assets/earpiece.jpg"
 
 export default function Player() {
     return (
         <div className='player_container'>
-            <img src={bgImage} alt='background image' className='bg_image' />
+            <img src={bgImage} alt="bg image" className="bg_img" />
 
-            <div className='player_ui'>
-                <div className='search_bar'>
-                    <input type='text' />
-                </div>
-
-                <div className='song_list'>
-                    <div></div>
-                </div>
-            </div>
-
-            <div className='control_panel'>
-                <div>Back Forward</div>
+            <div className='player'>
+                <div></div>
             </div>
         </div>
     )
