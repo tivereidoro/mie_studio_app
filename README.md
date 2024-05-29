@@ -14,12 +14,8 @@
 Welcome to our Last run! - The portfolio project of the Webstack specialization which is our last-major-project in ALX Software Engineering. This project showcases the development of an `Online Audio Player`.
 <div align="center">
 
-## ... PROJECT TITLE...
-
-MIESTUDIO APP
-
 ## ... PROJECT DESCRIPTION ...
-MIESTUDIO APP is an only music player designed to attend to the emotional, mental and soulish need of man. It is a music app whereby the user has the liberty to create his/her own desired playlist to suit his/her taste and kind of music.
+MIESTUDIO APP is an only music player designed to attend to the emotional, mental and soulish need of man. It is a music app that allows the users the liberty to create their own desired playlists to suit their taste and kinds of music.
 
 ## ... SCOPE OF THE APP ...
 MIESTUDIO APP has the following pages:
@@ -28,7 +24,7 @@ MIESTUDIO APP has the following pages:
         Welcomes the users into the app and gives a brief description of what the user stands to benefit using it
     
     Login or sign up page:
-        This displays a form for user authentification
+        This displays a form for user authentication
     
     Playlist page:
         This page enables the users to create and customise their own playlists
@@ -51,15 +47,21 @@ MIESTUDIO APP has the following pages:
         Vite
 
 ## ... CONCEPTS LEARNED ...
+
 React.js
 ---- React basics
 ---- How to create react app with npx create-react-app name
 ---- React use state
 ---- The render method
 
-Node.js
----- Node.js basics
----- 
-----
+Node.js    
+    Python
+    ---- Flask session authentication
+    ---- Flask app versioning 
+
+    Firebase
+    ---- Token based Authentication
+    ---- Managing Realtime database
+    ---- Storage of media files (audio files) and retrieving them.
 
 ![footer_banner](https://github.com/tivereidoro/assets/assets/105525310/ecb91fd3-aa63-4126-978e-d4ce63087e2d)
