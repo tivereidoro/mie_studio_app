@@ -14,11 +14,6 @@
 Welcome to our Last run! - The portfolio project of the Webstack specialization which is our last-major-project in ALX Software Engineering. This project showcases the development of an `Online Audio Player`.
 <div align="center">
 
-### ••• MORE DETAILS HERE SHORTLY •••
----
-![footer_banner](https://github.com/tivereidoro/assets/assets/105525310/ecb91fd3-aa63-4126-978e-d4ce63087e2d)
-
-
 ## ... PROJECT TITLE...
 
 MIESTUDIO APP
@@ -44,3 +39,5 @@ Node.js
 ---- Node.js basics
 ---- 
 ----
+
+![footer_banner](https://github.com/tivereidoro/assets/assets/105525310/ecb91fd3-aa63-4126-978e-d4ce63087e2d)
