@@ -22,7 +22,22 @@ MIESTUDIO APP
 MIESTUDIO APP is an only music player designed to attend to the emotional, mental and soulish need of man. It is a music app whereby the user has the liberty to create his/her own desired playlist to suit his/her taste and kind of music.
 
 ## ... SCOPE OF THE APP ...
-MIESTUDIO APP has a landing page to welcome the users, a login or sign up page for user authentification, the playlist page that enables the users to create and customise their own playlist, list of songs page which contains a pool of different tracks of songs from difeerent artists, the 'now playing' interface that displays with an image of the artist after a song is clicked.
+MIESTUDIO APP has the following pages:
+    
+    Landing page:
+        Welcomes the users into the app and gives a brief description of what the user stands to benefit using it
+    
+    Login or sign up page:
+        This displays a form for user authentification
+    
+    Playlist page:
+        This page enables the users to create and customise their own playlists
+    
+    List of songs page:
+        It contains a pool of different tracks of songs from different artists from which the user can either play directly or add to his/her playlists
+    
+    Now playing interface:
+        It displays with an image of the artist after a song is clicked and starts playing.
 
 ## ... TECHNOLOGIES USED ...
 Frontend : React.js
