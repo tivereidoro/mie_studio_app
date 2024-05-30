@@ -65,3 +65,16 @@ a {
   border-radius: 0.25rem;
 }
 
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.body_buttons,
+.body_info,
+.player_footer {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
