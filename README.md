@@ -51,6 +51,7 @@ MIESTUDIO APP has the following pages:
 React.js
 ---- React basics
 ---- How to create react app with npx create-react-app name
+---- Importing of files
 ---- React use state
 ---- The render method
 
