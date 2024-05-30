@@ -11,7 +11,7 @@ export default function SignupPage() {
         const email = document.getElementById('Email').value;
         const password = document.getElementById('Password').value;
 
-        console.log(username, email, password);
+        // console.log(username, email, password);
         axios({
             method: 'post',
             url: 'https://api-miestudio.onrender.com/api/v1/signup',
@@ -22,7 +22,7 @@ export default function SignupPage() {
             }
         })
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 alert("Signup successful");
             })
             .catch((err) => {
