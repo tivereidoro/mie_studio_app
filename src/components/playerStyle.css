@@ -88,3 +88,20 @@ a {
 .list_footer .list_link {
   color: #fff;
 }
+
+.list_cover {
+  position: absolute;
+  top: 0.5rem;
+  width: 100%;
+}
+.list_cover li:first-of-type {
+  margin-left: 0.75rem;
+}
+.list_cover li:last-of-type {
+  margin-right: 0.75rem;
+}
+.list_cover a {
+  font-size: 1.15rem;
+  color: #fff;
+}
+
