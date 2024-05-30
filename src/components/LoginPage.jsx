@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
-import axios from "axios";
+// import axios from "axios";
 import axiosInstance from "./api/axiosInstance";
 
 
@@ -12,9 +13,9 @@ export default function LoginPage() {
         const passwd = document.getElementById('Password').value;
 
         // console.log(email, passwd);
-        axios({
+        axiosInstance({
             method: 'post',
-            url: '/api/v1/login',
+            url: 'https://api-miestudio.onrender.com/api/v1/login',
             data: {
                 email: email,
                 password: passwd
@@ -52,6 +53,10 @@ export default function LoginPage() {
                 </div>
 
                 <input onClick={handleLogin} type="submit" className="form__button" value="Log In" />
+
+                <div className="form__div text_link">
+                    <p>Yet to register? &nbsp;<Link to="/signup" >Signup </Link>here</p>
+                </div>
             </form>
         </div>
     )

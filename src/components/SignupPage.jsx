@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
 import axios from 'axios';
@@ -57,6 +58,10 @@ export default function SignupPage() {
                 </div>
 
                 <input onClick={handleSignup} type="submit" className="form__button" value="Sign up" />
+
+                <div className="form__div text_link">
+                    <p>Already registered ? &nbsp;<Link to="/login" >Login </Link>instead</p>
+                </div>
             </form>
         </div>
     )
