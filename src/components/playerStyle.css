@@ -105,3 +105,16 @@ a {
   color: #fff;
 }
 
+/* The process bar */
+.range {
+  position: relative;
+  top: -1.5rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  width: 80%;
+  height: 0.125rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
