@@ -21,16 +21,16 @@ MIESTUDIO APP is a music player designed to attend to the emotional, mental and 
 MIESTUDIO APP has the following pages:
     
     Landing page:
-        Welcomes the users into the app and gives a brief description of what the user stands to benefit using it
+        Welcomes the users into the app and gives a brief description of what the user stands to benefit using it.
     
     Login or sign up page:
-        This displays a form for user authentication
+        This displays a form for user authentication.
     
     Playlist page:
-        This page enables the users to create and customise their own playlists
+        This page enables the users to create and customise their own playlists.
     
     List of songs page:
-        It contains a pool of different tracks of songs from different artists from which the user can either play directly or add to his/her playlists
+        It contains a pool of different tracks of songs from different artists from which the user can either play directly or add to his/her playlists.
     
     Now playing interface:
         It displays with an image of the artist after a song is clicked and starts playing.
