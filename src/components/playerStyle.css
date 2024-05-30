@@ -171,10 +171,23 @@ a {
   color: #fff;
 }
 
+/* ..... */
 
 /* The player buttons */
 .list_buttons {
   align-items: center;
   justify-content: center;
 }
+.list_buttons li:nth-of-type(n+2) {
+  margin-left: 1.25rem;
+}
 
+.list_buttons a {
+  padding-top: 0.45rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.45rem;
+  padding-left: 0.75rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);
+}
