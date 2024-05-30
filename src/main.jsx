@@ -10,6 +10,7 @@ import './index.css';
 import Player from "./components/Player";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import TracksList from "./components/TracksList";
 
 
 // Create routers for app navigation
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "signup",
     element: <SignupPage />
+  },
+  {
+    path: "tracks",
+    element: <TracksList />
   }
 ]);
 
