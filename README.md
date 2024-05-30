@@ -63,6 +63,6 @@ Node.js
     Firebase
     ---- Token based Authentication
     ---- Managing Realtime database
-    ---- Storage of media files (audio files) and retrieving them.
+    ---- Storage of media files (audio files) and retrieving them
 
 ![footer_banner](https://github.com/tivereidoro/assets/assets/105525310/ecb91fd3-aa63-4126-978e-d4ce63087e2d)
