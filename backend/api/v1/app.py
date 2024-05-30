@@ -24,7 +24,8 @@ else:
 app.config.from_object(configuration)
 app.url_map.strict_slashes = False
 app.register_blueprint(app_views)
-CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+CORS(app, supports_credentials=True,
+     resources={r"/api/v1/*": {"origins": "*"}})
 auth = SessionAuth()
 
 
