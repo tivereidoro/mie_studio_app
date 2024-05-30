@@ -20,6 +20,7 @@ Welcome to our Last run! - The portfolio project of the Webstack specialization 
 `MIESTUDIO APP` is a music player designed to attend to the emotional, mental and soulish need of man. It is a music app that allows the users the liberty to create their own desired playlists to suit their taste and kinds of music.
 
 ## ... SCOPE OF THE APP ...
+
 MIESTUDIO APP has the following pages:
     
     Landing page:
