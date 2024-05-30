@@ -208,7 +208,7 @@ a {
 
 .list_buttons li:nth-of-type(2) a {
   padding: 0.82rem 1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: rgba(211, 3, 32, 0.95);
 }
 
@@ -236,7 +236,9 @@ a {
 
 .player_footer {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  position: relative;
+  bottom: 0;
 }
 
 .list_footer a {
