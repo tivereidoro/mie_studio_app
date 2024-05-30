@@ -42,3 +42,14 @@ a {
   object-position: center;
 }
 
+.player {
+  margin-top: 2rem auto;
+  max-width: 20rem;
+  height: 100vh;
+  padding: 3rem 2rem;
+  border: 5px solid hsla(0, 0%, 50%, 0.429);
+  border-radius: 0.25rem;
+  /* background-color: azure; */
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.19), 0 6px 6px -10px rgba(0, 0, 0, 0.23);
+  backdrop-filter: blur(20px);
+}
