@@ -155,13 +155,26 @@ a {
 
 /* The Song and artist info */
 .info_album,
-  .info_song {
-    margin-bottom: 0.5rem;
-  }
-  
-  .info_artist,
-  .info_album {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: #fff;
-  }
+.info_song {
+  margin-bottom: 0.5rem;
+}
+
+.info_artist,
+.info_album {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #666;
+}
+.info_song {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+
+/* The player buttons */
+.list_buttons {
+  align-items: center;
+  justify-content: center;
+}
+
