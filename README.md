@@ -36,7 +36,7 @@ MIESTUDIO APP has the following pages:
         It contains a pool of different tracks of songs from different artists from which the user can either play directly or add to his/her playlists.
     
     Now playing interface:
-        It displays with an image of the artist after a song is clicked and starts playing.
+        It displays, with an image of the artist, after a song is clicked and starts playing.
 
 ## ... TECHNOLOGIES USED ...
     
