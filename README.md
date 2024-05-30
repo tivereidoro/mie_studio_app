@@ -3,6 +3,7 @@
     
 ---
 # MIESTUDIO APP
+
 <img src="https://img.shields.io/badge/ALX SE-96C2C5"> &nbsp;<img src="https://img.shields.io/badge/Group Project-306998"> &nbsp;<img src="https://img.shields.io/badge/Portfolio Project-306998">
 </div>
 
