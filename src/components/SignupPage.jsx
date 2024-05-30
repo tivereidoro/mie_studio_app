@@ -23,9 +23,11 @@ export default function SignupPage() {
         })
             .then((res) => {
                 console.log(res);
+                alert("Signup successful");
             })
             .catch((err) => {
                 console.log(err);
+                alert("Invalid signup details");
             }
             );
     }
