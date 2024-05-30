@@ -53,3 +53,15 @@ a {
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.19), 0 6px 6px -10px rgba(0, 0, 0, 0.23);
   backdrop-filter: blur(20px);
 }
+
+/* *********** THE MUSIC PLAYER ************* */
+  
+.body_cover {
+  position: relative;
+}
+
+.body_cover img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
