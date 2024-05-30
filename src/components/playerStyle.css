@@ -45,8 +45,8 @@ a {
 .player {
   margin-top: 2rem auto;
   max-width: 20rem;
-  height: 100vh;
-  padding: 3rem 2rem;
+  height: 96vh;
+  padding: 1rem 1rem;
   border: 5px solid hsla(0, 0%, 50%, 0.429);
   border-radius: 0.25rem;
   /* background-color: azure; */
@@ -190,4 +190,41 @@ a {
   font-size: 2rem;
   border-radius: 50%;
   box-shadow: 0 3px 6px rgba(33, 33, 33, 0.1), 0 3px 12px rgba(33, 33, 33, 0.15);
+}
+
+.list_buttons a:focus, .list_buttons a:hover {
+  color: rgba(171, 2, 26, 0.95);
+  opacity: 1;
+  /* box-shadow: 0 6px 9px rgba(33, 33, 33, 0.1), 0 6px 16px rgba(33, 33, 33, 0.15); */
+}
+
+.list_buttons li:nth-of-type(2) a {
+  padding-top: 0.82rem;
+  padding-right: 1rem;
+  padding-bottom: 0.82rem;
+  padding-left: 1.19rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  color: rgba(211, 3, 32, 0.95);
+}
+
+.list_buttons li:first-of-type a,
+.list_buttons li:last-of-type a {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.5;
+}
+.list_buttons li:first-of-type a:focus, .list_buttons li:first-of-type a:hover,
+.list_buttons li:last-of-type a:focus,
+.list_buttons li:last-of-type a:hover {
+  color: #d30320;
+  opacity: 0.75;
+}
+
+.list_link {
+  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.list_link:focus, .list_link:hover {
+  color: #d30320;
 }
