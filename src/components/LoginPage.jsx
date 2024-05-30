@@ -2,6 +2,7 @@ import React from 'react';
 import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
 import axios from "axios";
+import axiosInstance from "./api/axiosInstance";
 
 
 export default function LoginPage() {
@@ -10,12 +11,10 @@ export default function LoginPage() {
         const email = document.getElementById('Email').value;
         const passwd = document.getElementById('Password').value;
 
-        let active = false;
-
-        console.log(email, passwd);
+        // console.log(email, passwd);
         axios({
             method: 'post',
-            url: 'https://api-miestudio.onrender.com/api/v1/login',
+            url: '/api/v1/login',
             data: {
                 email: email,
                 password: passwd
@@ -24,14 +23,13 @@ export default function LoginPage() {
             .then((res) => {
                 // console.log(res);
                 // alert("Login successful");
-                active = true;
-                window.location.href = '/';
+
+                window.location.href = '/tracks';
             })
             .catch((err) => {
                 console.log(err);
                 alert("Invalid login details");
-            }
-            );
+            });
     }
 
 

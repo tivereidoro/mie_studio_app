@@ -2,11 +2,14 @@ import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./playerStyle.css";
 import axios from "axios";
+import axiosInstance from './api/axiosInstance';
 
 export default function Tracks() {
-    axios.get()
-        .then()
-        .catch();
+    axiosInstance.get("/api/v1/tracks")
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => console.log(err));
 
     return (
         <div className="tracks_container">
