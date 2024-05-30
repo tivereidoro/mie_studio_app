@@ -144,3 +144,10 @@ a {
 .range:focus:after, .range:hover:after {
   background: rgba(211, 3, 32, 0.95);
 }
+
+
+.body_info {
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+}
