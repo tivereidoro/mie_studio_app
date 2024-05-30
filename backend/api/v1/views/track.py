@@ -49,8 +49,9 @@ def delete_tracks() -> str:
 def get_all_tracks_info() -> str:
     """GET /tracks
     """
-    token = session.get('user').get('idToken', '')
-    tracks = firebase.db.child(Track.__tablename__).get(token).val()
+    # token = session.get('user').get('idToken', '')
+    # tracks = firebase.db.child(Track.__tablename__).get(token).val()
+    tracks = firebase.db.child(Track.__tablename__).get().val()
     for track_id in tracks.keys():
         tracks[track_id]['uri'] = f"{BASE_URI}/tracks/{track_id}"
     return jsonify({
@@ -81,7 +82,8 @@ def get_specified_tracks_only() -> str:
             "success": False,
             "message": "tracks must be a non-empty list of strings"}), 400
 
-    token = session.get('user').get('idToken', '')
+    # token = session.get('user').get('idToken', '')
+    token = ''
     tracks = {}
     for track_id in data['tracks']:
         if len(track_id):
@@ -105,14 +107,15 @@ def get_playback_uri(track_id) -> str:
             progressively download
     and play the track in the browser
     """
-    token = session.get('user').get('idToken', '')
-    track = models.storage.get(Track, track_id,
-                               session.get('user').get('idToken'))
+    # token = session.get('user').get('idToken', '')
+    token = ''
+    track = models.storage.get(Track, track_id, token)
     if not track:
         return jsonify({
             "success": False,
             "message": "Track not found"}), 404
     path = get_track_path(track)
+    # uri = firebase.media_store.child(path).get_url(token)
     uri = firebase.media_store.child(path).get_url(token)
     track_json = track.to_json()
     track_json['playback_uri'] = uri

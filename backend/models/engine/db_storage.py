@@ -93,7 +93,10 @@ class realtime_DBStorage:
             return None
 
         try:
-            matches = self.db.child(cls.__tablename__).child(id).get(token).val()   # noqa: 501
+            if token and type(token) is str  and len(token) > 0:
+                matches = self.db.child(cls.__tablename__).child(id).get(token).val()   # noqa: 501
+            else:
+                matches = self.db.child(cls.__tablename__).child(id).get().val()    # noqa: 501
             if matches:
                 if cls is User:
                     # A password retrieved from database was previously hashed
