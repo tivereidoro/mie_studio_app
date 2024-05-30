@@ -1,6 +1,7 @@
 import React from 'react';
 import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
+import axios from 'axios';
 
 export default function SignupPage() {
 
@@ -11,6 +12,22 @@ export default function SignupPage() {
         const password = document.getElementById('Password').value;
 
         console.log(username, email, password);
+        axios({
+            method: 'post',
+            url: 'https://api-miestudio.onrender.com/api/v1/signup',
+            data: {
+                username: username,
+                email: email,
+                password: password
+            }
+        })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            }
+            );
     }
 
     return (
