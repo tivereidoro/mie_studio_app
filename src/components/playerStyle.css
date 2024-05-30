@@ -11,13 +11,27 @@
   --small-font-size: .75rem;
 }
 
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", Arial, Verdana, sans-serif;
+  background: #e4f2fb;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 /*===== PLAYER =====*/
 .player_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: relative;
+  /* height: 100vh; */
+  /* position: relative; */
 }
 
 .bg_img {
@@ -27,17 +41,4 @@
   object-fit: cover;
   object-position: center;
 }
-
-.player {
-  margin-top: 2rem auto;
-  max-width: 20rem;
-  height: 95vh;
-  padding: 3rem 2rem;
-  border: 5px solid hsla(0, 0%, 50%, 0.429);
-  border-radius: 0.25rem;
-  /* background-color: azure; */
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.19), 0 6px 6px -10px rgba(0, 0, 0, 0.23);
-  backdrop-filter: blur(20px);
-}
-
 
