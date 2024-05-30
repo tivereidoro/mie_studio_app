@@ -78,3 +78,13 @@ a {
   padding-right: 2rem;
   padding-left: 2rem;
 }
+
+.list_cover,
+.list_footer {
+  justify-content: space-between;
+}
+  
+.list_header .list_link,
+.list_footer .list_link {
+  color: #fff;
+}
