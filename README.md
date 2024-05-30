@@ -43,8 +43,8 @@ MIESTUDIO APP has the following pages:
     Backend:
         Python
         Flask
-        vite
         Firebase
+        Vite
 
 ## ... CONCEPTS LEARNED ...
 
