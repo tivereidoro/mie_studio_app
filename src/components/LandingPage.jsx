@@ -16,7 +16,6 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    {/* <img className="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/line-logo.svg" /> */}
                     <img className="curve" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/bottom-curve_copy.svg" />
                     <img className="waves" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/waves_copy.svg" />
                 </div>

@@ -25,7 +25,7 @@ export default function LoginPage() {
                 // console.log(res);
                 // alert("Login successful");
 
-                window.location.href = '/';
+                window.location.href = '/player';
             })
             .catch((err) => {
                 console.log(err);
