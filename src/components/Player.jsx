@@ -58,6 +58,8 @@ export default function Player() {
 
                     </ul>
                 </div>
+
+                {/* <div className='sticky'>This is a sticky demo</div> */}
             </div>
 
         </div>

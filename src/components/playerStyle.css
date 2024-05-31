@@ -257,3 +257,11 @@ a {
 
 /* ******** TRACKS LIST PAGE ******* */
 
+.sticky {
+  position: -webkit-sticky;
+  position: relative;
+  bottom: 0;
+  max-width: 20rem;
+  background-color: yellow;
+  padding: 1rem;
+}
