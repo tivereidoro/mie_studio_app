@@ -40,7 +40,11 @@ function TracksList() {
 
                     <div className='list_item'>
                         {tracks.map((track) => {
+<<<<<<< HEAD
                             return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={'Artist'} key={track.id} />)
+=======
+                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
+>>>>>>> 99dc7724f9c1b85cb259ad2627d73403ded685dd
                         })}
                     </div>
                 </div>
