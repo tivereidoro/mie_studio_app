@@ -8,9 +8,9 @@ import axiosInstance from './api/axiosInstance';
 import { useState, useEffect } from 'react';
 
 
-function TracksList () {
+function TracksList() {
 
-const tracksTemplate = [
+    const tracksTemplate = [
         { title: "Hello", artist: "Adele", duration: "3:23" },
         { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
     ]
