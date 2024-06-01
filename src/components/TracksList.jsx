@@ -15,7 +15,7 @@ const tracksTemplate = [
         { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
     ]
 
-    const [tracks, setTracks] = useState(tracksTemplate);
+    const [tracks, setTracks] = useState([]);
 
     useEffect(() => {
         // This code will run once when the component mounts (onload)
