@@ -9,11 +9,18 @@ import axiosInstance from './api/axiosInstance';
 
 export default function Tracks() {
     function populateTracks(tracks) {
-        return (
-            tracks.map((track) => {
-                return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
-            })
-        )
+
+        const items = []
+
+        Object.entries(tracks).map(([key, value]) => {
+            items.push(<SongItem songTitle={value.title} songDuration={value.duration}
+                songArtist={'Artiste'}/>);
+        })
+        return (items);
+
+        // tracks.map((track) => {
+        //    return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
+        // })
     }
 
 
