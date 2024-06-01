@@ -8,19 +8,28 @@ import SongItem from './SongItem';
 import axiosInstance from './api/axiosInstance';
 
 export default function Tracks() {
+    function populateTracks(tracks) {
+        return (
+            tracks.map((track) => {
+                return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
+            })
+        )
+    }
+
+
     axiosInstance.get("/api/v1/tracks")
         .then((res) => {
-            console.log(res.data.tracks);
+            // console.log(res.data.tracks);
+            console.log(populateTracks(res.data.tracks));
         })
         .catch((err) => console.log(err));
 
-    const tracks = [
-        { title: "Hello", artist: "Adele", duration: "3:23" },
-        { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
-    ]
+    // const tracks = [
+    //     { title: "Hello", artist: "Adele", duration: "3:23" },
+    //     { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
+    // ]
 
     return (
-
         <div className='player_container'>
             <img src={bgImage} alt="bg image" className="bg_img" />
 
@@ -31,9 +40,7 @@ export default function Tracks() {
                     </div>
 
                     <div className='list_item'>
-                        {tracks.map((track) => {
-                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
-                        })}
+
                     </div>
 
 
