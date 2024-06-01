@@ -40,7 +40,7 @@ const tracksTemplate = [
 
                     <div className='list_item'>
                         {tracks.map((track) => {
-                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={'Artist'} />)
+                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
                         })}
                     </div>
                 </div>
