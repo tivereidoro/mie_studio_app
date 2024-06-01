@@ -4,39 +4,30 @@ import "./playerStyle.css";
 import bgImage from "../assets/earpiece.jpg"
 import albumArt from "../assets/album_art.jpg";
 import SongItem from './SongItem';
-// import axios from "axios";
 import axiosInstance from './api/axiosInstance';
+import { useState, useEffect } from 'react';
 
-export default function Tracks() {
-    function populateTracks(tracks) {
 
-        const items = []
+function TracksList () {
 
-        Object.entries(tracks).map(([key, value]) => {
-            items.push(<SongItem songTitle={value.title} songDuration={value.duration}
-                songArtist={'Artiste'} />);
-        })
-        return (items);
+const tracksTemplate = [
+        { title: "Hello", artist: "Adele", duration: "3:23" },
+        { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
+    ]
 
-        // tracks.map((track) => {
-        //    return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
-        // })
-    }
+    const [tracks, setTracks] = useState(tracksTemplate);
 
-    let tracks = {};
+    useEffect(() => {
+        // This code will run once when the component mounts (onload)
+        axiosInstance.get('/api/v1/tracks')
+            .then((res) => {
+                // Set the state with the fetched data
+                // console.log(res.data.tracks)
+                setTracks(Object.values(res.data.tracks));
+            })
+            .catch((err) => console.log(err));
+    }, []);
 
-    axiosInstance.get("/api/v1/tracks")
-        .then((res) => {
-            // console.log(res.data.tracks);
-            tracks = JSON.parse(JSON.stringify(res.data.tracks));
-        })
-        .catch((err) => console.log(err));
-
-    // const tracks = [
-    //     { title: "Hello", artist: "Adele", duration: "3:23" },
-    //     { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
-    // ]
-    console.log(tracks);
     return (
         <div className='player_container'>
             <img src={bgImage} alt="bg image" className="bg_img" />
@@ -48,14 +39,14 @@ export default function Tracks() {
                     </div>
 
                     <div className='list_item'>
-                        {populateTracks(tracks)}
+                        {tracks.map((track) => {
+                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={'Artist'} />)
+                        })}
                     </div>
-
-
-
                 </div>
             </div>
-
         </div>
     )
-}
+};
+
+export default TracksList;
