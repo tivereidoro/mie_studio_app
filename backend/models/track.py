@@ -9,6 +9,7 @@ class Track(Base):
     Holds metadata for tracks (songs)
     """
     __tablename__ = 'tracks'
+    artist = ''     # Name of artist
     uploader_id = ''
     title = ''
     duration = 0    # In seconds

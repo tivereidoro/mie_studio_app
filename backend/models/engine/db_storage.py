@@ -93,7 +93,7 @@ class realtime_DBStorage:
             return None
 
         try:
-            if token and type(token) is str  and len(token) > 0:
+            if token and type(token) is str and len(token) > 0:
                 matches = self.db.child(cls.__tablename__).child(id).get(token).val()   # noqa: 501
             else:
                 matches = self.db.child(cls.__tablename__).child(id).get().val()    # noqa: 501

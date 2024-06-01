@@ -133,12 +133,13 @@ def upload_track() -> str:
         - title: string [optional]
         - duration: integer # Duration in seconds
         - payload: file # Must be an audio file
+        - artist: Name of artist
     Note:
         * If title is not passed, the filename becomes the title
         * If duration can be derived from metadata, this duration attribute
             will be forsaken
     """
-    attrs = ['duration', 'payload']
+    attrs = ['duration', 'payload', 'artist']
     data = {}
     for attr in attrs:
         if attr == 'payload':
