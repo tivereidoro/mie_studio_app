@@ -14,7 +14,7 @@ export default function Tracks() {
 
         Object.entries(tracks).map(([key, value]) => {
             items.push(<SongItem songTitle={value.title} songDuration={value.duration}
-                songArtist={'Artiste'}/>);
+                songArtist={'Artiste'} />);
         })
         return (items);
 
@@ -23,11 +23,12 @@ export default function Tracks() {
         // })
     }
 
+    let tracks = {};
 
     axiosInstance.get("/api/v1/tracks")
         .then((res) => {
             // console.log(res.data.tracks);
-            console.log(populateTracks(res.data.tracks));
+            tracks = JSON.parse(JSON.stringify(res.data.tracks));
         })
         .catch((err) => console.log(err));
 
@@ -35,7 +36,7 @@ export default function Tracks() {
     //     { title: "Hello", artist: "Adele", duration: "3:23" },
     //     { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
     // ]
-
+    console.log(tracks);
     return (
         <div className='player_container'>
             <img src={bgImage} alt="bg image" className="bg_img" />
@@ -47,7 +48,7 @@ export default function Tracks() {
                     </div>
 
                     <div className='list_item'>
-
+                        {populateTracks(tracks)}
                     </div>
 
 
