@@ -162,6 +162,7 @@ def upload_track() -> str:
     # Determine path
     data['extension'] = '.' + data['payload'].filename.split('.')[-1]
     track = Track(uploader_id=session.get('user').get('localId', ''),
+                  artist=data['artist'],
                   title=data['title'],
                   duration=data['duration'],
                   extension=data['extension'])
