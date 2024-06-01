@@ -3,15 +3,21 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./playerStyle.css";
 import bgImage from "../assets/earpiece.jpg"
 import albumArt from "../assets/album_art.jpg";
+import SongItem from './SongItem';
 // import axios from "axios";
 import axiosInstance from './api/axiosInstance';
 
 export default function Tracks() {
     axiosInstance.get("/api/v1/tracks")
         .then((res) => {
-            console.log(res);
+            console.log(res.data);
         })
         .catch((err) => console.log(err));
+
+    const tracks = [
+        { title: "Hello", artist: "Adele", duration: "3:23" },
+        { title: "Roar", artist: "Dusin Oyekan", duration: "3:46" }
+    ]
 
     return (
 
@@ -25,23 +31,12 @@ export default function Tracks() {
                     </div>
 
                     <div className='list_item'>
-                        <div className='song'>
-                            <img src={albumArt} style={{ width: '20px', height: '20px' }} />
-                        </div>
-                        <p className='song_title'>Song Title</p>
-                        <p className='song_artist'>Song Artist</p>
-                        <p className='song_duration'>Duration</p>
+                        {tracks.map((track) => {
+                            return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={track.artist} />)
+                        })}
                     </div>
 
 
-                    <div className='list_item'>
-                        <div className='song'>
-                            <img src={albumArt} style={{ width: '20px', height: '20px' }} />
-                        </div>
-                        <p className='song_title'>Song Title</p>
-                        <p className='song_artist'>Song Artist</p>
-                        <p className='song_duration'>Duration</p>
-                    </div>
 
                 </div>
             </div>
