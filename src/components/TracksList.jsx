@@ -10,7 +10,7 @@ import axiosInstance from './api/axiosInstance';
 export default function Tracks() {
     axiosInstance.get("/api/v1/tracks")
         .then((res) => {
-            console.log(res.data);
+            console.log(res.data.tracks);
         })
         .catch((err) => console.log(err));
 
