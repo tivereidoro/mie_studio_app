@@ -8,7 +8,8 @@
 
 <div align="center">
 
-## ... ALX_SE Webstack Portfolio Project
+## ... ALX_SE Webstack Portfolio Project ...
+
 </div>
 Welcome to our Last run! - The portfolio project of the Webstack specialization which is our last-major-project in ALX Software Engineering. This project showcases the development of an `Online Audio Player`.
 <div align="center">
