@@ -6,18 +6,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import LoginPage from "./components/LoginPage";
-// import SignupPage from "./components/SignupPage";
+import LandingPage from "./components/LandingPage";
 import Player from "./components/Player";
-import { Login } from "@mui/icons-material";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import TracksList from "./components/TracksList";
+import axiosInstance from './components/api/axiosInstance';
 
 
 // Create routers for app navigation
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Player />
+    element: <LandingPage />
   },
   {
     path: "login",
@@ -26,7 +27,15 @@ const router = createBrowserRouter([
   {
     path: "signup",
     element: <SignupPage />
-  }
+  },
+  {
+    path: "tracks",
+    element: <TracksList />
+  },
+  {
+    path: 'player',
+    element: <Player />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -86,8 +86,7 @@ h1 {
   transition: 0.3s;
 }
 .form__button {
-  display: block;
-  margin-left: auto;
+  margin: 0 auto;
   padding: 0.75rem 2rem;
   outline: none;
   border: none;
@@ -124,4 +123,15 @@ h1 {
 /*Input focus*/
 .form__input:focus {
   border: 2px solid var(--first-color);
+}
+
+
+.text_link {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.text_link p a {
+  color: #1A73E8;
 }
