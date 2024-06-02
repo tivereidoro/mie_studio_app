@@ -28,19 +28,20 @@ CORS(app, supports_credentials=True,
      resources={r"/api/v1/*": {"origins": "*"}})
 auth = SessionAuth()
 
+# Excluded paths should end with a forward slash '/' except wildcards
+excluded_paths = [
+        '/api/v1/stat*',    # status, stats
+        '/api/v1/signup/',
+        '/api/v1/login/',
+        '/api/v1/reset-password/',
+        '/api/v1/tracks/*'
+    ]
+
 
 @app.before_request
 def do_auth():
     """Perform authentication routines
     """
-    # Excluded paths should end with a forward slash '/' except wildcards
-    excluded_paths = [
-            '/api/v1/stat*',    # status, stats
-            '/api/v1/signup/',
-            '/api/v1/login/',
-            '/api/v1/reset-password/',
-            '/api/v1/tracks/*'
-        ]
     if not auth.require_auth(request.path, excluded_paths=excluded_paths):
         return
 
