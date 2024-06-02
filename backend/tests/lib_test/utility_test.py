@@ -28,6 +28,7 @@ def test_is_list_of_strings(list_input, list_output):
 
 def test_get_track_path_correct_value():
     """Ensure determination of track location
+    Name of a track is the id + extension
     """
     track = Track(extension='.mp3')
     assert utility.get_track_path(track).split('/')[-1] == (track.id + track.extension)
