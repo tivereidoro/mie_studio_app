@@ -31,7 +31,9 @@ def test_get_track_path_correct_value():
     Name of a track is the id + extension
     """
     track = Track(extension='.mp3')
-    assert utility.get_track_path(track).split('/')[-1] == (track.id + track.extension)
+    o_input = utility.get_track_path(track).split('/')[-1]
+    o_output = (track.id + track.extension)
+    assert o_input == o_output
 
 
 @pytest.mark.parametrize('arg', [
