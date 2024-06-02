@@ -2,7 +2,6 @@
     <img align="center" src="https://github.com/tivereidoro/assets/assets/105525310/8d298662-9874-46b0-aabc-54f837bcc6a4" alt="alx_swe" width="60"  height="60"/>
     
 # MIESTUDIO APP
-
 <img src="https://img.shields.io/badge/ALX SE-96C2C5"> &nbsp;<img src="https://img.shields.io/badge/Group Project-306998"> &nbsp;<img src="https://img.shields.io/badge/Portfolio Project-306998">
 </div>
 
