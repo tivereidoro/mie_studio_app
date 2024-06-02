@@ -57,7 +57,7 @@ def create_user() -> str:
     firebase.auth.send_email_verification(user['idToken'])
     # Continue sign up
     user_obj = User(id=user['localId'], username=username,
-                    email=email, password=password)
+                    email=email)
     if not user_obj.save(user['idToken']):
         return jsonify({
             "success": False,
