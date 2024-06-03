@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import "./playerStyle.css";
+import '../styles/playerStyle.css';
 import bgImage from "../assets/earpiece.jpg"
 import SongItem from './SongItem';
 import axiosInstance from '../api/axiosInstance';
