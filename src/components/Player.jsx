@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/playerStyle.css';
-import bgImage from "../assets/earpiece.jpg"
-import albumArt from "../assets/album_art.jpg";
-
 
 export default function Player() {
 
