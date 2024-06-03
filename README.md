@@ -25,13 +25,13 @@ Welcome to our Last run! - The portfolio project of the Webstack specialization 
 ## Table of Contents
 
 - [Project Description](#project-description)
+- [Scope](#scope)
 - [Technologies-Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Structure](#structure)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+- [Concepts Learned](#concepts)
+- [Authors](#authors)
+
+
 
 ---
 
