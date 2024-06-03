@@ -52,46 +52,17 @@ export default function Player() {
     const musicAPI = [
         {
             songName: 'Chasing',
-            songArtist: 'NEFFEX',
+            songArtist: 'NEF',
             songSrc: '../assets/songs/Chasing.mp3',
             songAvatar: '../asset'
         },
         {
             songName: 'AURORA - Runaway',
-            songArtist: 'Aurora Aksnes',
+            songArtist: 'Aurora',
             songSrc: '../assets/songs/AURORA - Runaway (Lyrics).mp3',
             songAvatar: '../assets/Images/image4.jpg'
         },
-        {
-            songName: 'Catch Me If I Fall',
-            songArtist: 'TEGNENT',
-            songSrc: '../assets/songs/Catch Me If I Fall - NEFFEX.mp3',
-            songAvatar: '../assets/Images/image2.jpg'
-        },
-        {
-            songName: 'Inspired (Clean)',
-            songArtist: 'NEFFEX',
-            songSrc: '../assets/songs/Inspired (Clean) - NEFFEX.mp3',
-            songAvatar: '../assets/Images/image3.jpg'
-        },
-        {
-            songName: 'Baby doll [ slowed + reverb ]',
-            songArtist: 'Kanika Kapoor',
-            songSrc: '../assets/songs/Baby doll [ slowed + reverb ] __ meet bros ,Kanika Kapoor __ jr santu.mp3',
-            songAvatar: '../assets/Images/image5.jpg'
-        },
-        {
-            songName: 'Soch (Slowed+Reverbed)',
-            songArtist: 'Hardy Sandhu',
-            songSrc: '../assets/songs/SOCH(Slowed+Reverbed) __ Hardy Sandhu.webm',
-            songAvatar: '../assets/Images/image6.jpg'
-        },
-        {
-            songName: 'Apna Bana Le',
-            songArtist: 'Arijit Singh',
-            songSrc: '../assets/songs/Apna Bana Le - Full Audio _ Bhediya _ Varun Dhawan, Kriti Sanon_ Sachin-Jigar,Arijit Singh,Amitabh B.webm',
-            songAvatar: '../assets/Images/image7.jpg'
-        }
+
     ]
 
     const handleNextSong = () => {
