@@ -10,8 +10,8 @@ export default function Player() {
     const [currentMusicDetails, setCurrentMusicDetails] = useState({
         songName: 'Chasing',
         songArtist: 'NEFFEX',
-        songSrc: { song1 },
-        songAvatar: { song1Image }
+        songSrc: "",
+        songAvatar: ""
     })
 
     //UseStates Variables
