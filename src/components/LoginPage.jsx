@@ -23,7 +23,7 @@ export default function LoginPage() {
         })
             .then((res) => {
                 // console.log(res);
-                // alert("Login successful");
+                alert("Login successful! Proceed to music player.");
 
                 window.location.href = '/player';
             })
