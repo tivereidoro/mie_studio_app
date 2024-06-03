@@ -1,6 +1,6 @@
 <div align="center">
     <img align="center" src="https://github.com/tivereidoro/assets/assets/105525310/8d298662-9874-46b0-aabc-54f837bcc6a4" alt="alx_swe" width="60"  height="60"/>
-    
+
 # MIE-STUDIO MUSIC PLAYER
 
 <img src="https://img.shields.io/badge/ALX SE-96C2C5"> &nbsp;<img src="https://img.shields.io/badge/Group Project-306998"> &nbsp;<img src="https://img.shields.io/badge/Portfolio Project-306998">
@@ -42,32 +42,32 @@ Welcome to our Last run! - The portfolio project of the Webstack specialization 
 ## SCOPE OF THE APP
 
 MIESTUDIO APP has the following pages:
-    
+
     Landing page:
         Welcomes the users into the app and gives a brief description of what the user stands to benefit using it.
-    
+
     Login and sign up page:
         This displays a form for user authentication.
-    
+
     Playlist page:
         This page enables the users to create and customise their own playlists.
-    
+
     List of songs page:
         It contains a pool of different tracks of songs from different artists from which the user can either play directly or add to his/her playlists.
-    
+
     Now playing interface:
         It displays with an image of the artist after a song is clicked and starts playing.
 
 ## TECHNOLOGIES USED
-    
+
     Frontend:
         React.js
+        Vite
 
     Backend:
         Python
         Flask
         Firebase
-        Vite
 
 
 
@@ -93,7 +93,7 @@ To install and run the Mie-Studio music player app on your local machine, follow
    ```groovy
    $ npm install
    ```
-   
+
 4. Run the app:
     ```groovy
    $ npm run dev
@@ -112,10 +112,10 @@ React.js
 ---- React use state
 ---- The render method
 
-Node.js    
+Node.js
     Python
     ---- Flask session authentication
-    ---- Flask app versioning 
+    ---- Flask app versioning
 
     Firebase
     ---- Token based Authentication
