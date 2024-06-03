@@ -8,7 +8,8 @@ from flask import jsonify, abort, request, make_response, session
 from backend.api.v1.views import app_views, BASE_URI
 from backend.models.track import Track
 from backend.api.v1 import firebase
-from backend.lib.utility import get_track_path, is_list_of_strings
+from backend.lib.utility import (get_track_path, is_list_of_strings,
+                                 create_track_path)
 from pprint import pprint
 
 
@@ -50,10 +51,19 @@ def get_all_tracks_info() -> str:
     """GET /tracks
     """
     # token = session.get('user').get('idToken', '')
+    token = ''
     # tracks = firebase.db.child(Track.__tablename__).get(token).val()
+
     tracks = firebase.db.child(Track.__tablename__).get().val()
     for track_id in tracks.keys():
         tracks[track_id]['uri'] = f"{BASE_URI}/tracks/{track_id}"
+
+        # Add playback uri
+        track_extension = tracks[track_id]['extension']
+        path = create_track_path(track_id, track_extension)
+        uri = firebase.media_store.child(path).get_url(token)
+        tracks[track_id]['playback_uri'] = uri
+
     return jsonify({
         "success": True,
         "message": "All tracks fetched successfully",

@@ -39,3 +39,16 @@ def get_track_path(track) -> str:
         str(os.getenv('AUDIO_DIR')),
         (track.id + track.extension)])
     return path
+
+
+def create_track_path(track_id, track_extension) -> str:
+    """Create track path based on `get_track_path`
+    """
+    requirements = [track_id, track_extension]
+    for obj in requirements:
+        if (not obj) or (len(obj) < 1):
+            raise TypeError('Non-empty string is expected')
+    path = '/'.join([
+        str(os.getenv('AUDIO_DIR')),
+        (track_id + track_extension)])
+    return path
