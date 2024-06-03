@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
 // import axios from "axios";
-import axiosInstance from "./api/axiosInstance";
+import axiosInstance from "../api/axiosInstance";
 
 
 export default function LoginPage() {

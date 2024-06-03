@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./playerStyle.css";
 import bgImage from "../assets/earpiece.jpg"
 import SongItem from './SongItem';
-import axiosInstance from './api/axiosInstance';
+import axiosInstance from '../api/axiosInstance';
 import { useState, useEffect } from 'react';
 
 
