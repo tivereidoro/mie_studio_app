@@ -137,20 +137,20 @@ body{
 
 /* ******** SONG TRACKS LIST ******** */
 
-.tracks_container {
+/* .tracks_container {
   
-  /* position: absolute; */
+  position: absolute;
   background: #cecaca;
   width: 100%;
-  /* left: 0; */
+  left: 0;
   opacity: 0;
   pointer-events: none;
-  /* z-index: 5; */
+  z-index: 5;
   padding: 15px 30px;
   border-radius: 15px;
   box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
   overflow: scroll;
-}
+} */
 
 .list_body {
   background-color: #cecaca;
@@ -165,5 +165,5 @@ body{
   margin-bottom: 5px;
   color: #515c6f;
   border-bottom: 1px solid #e5e5e5;
-  overflow: auto;
+  overflow: scroll;
 }

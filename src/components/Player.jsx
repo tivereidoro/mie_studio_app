@@ -21,7 +21,7 @@ export default function Player() {
     const [musicTotalLength, setMusicTotalLength] = useState('04 : 38');
     const [musicCurrentTime, setMusicCurrentTime] = useState('00 : 00');
 
-    const currentAudio = useRef();
+    const currentAudio = useRef(new Audio("https://firebasestorage.googleapis.com/v0/b/miestudio-e49b8.appspot.com/o/audio%2Fe1bcbd3e-aac4-41a9-923d-4aaee4c9a500.mp3?alt=media"));
 
     const handleMusicProgressBar = (e) => {
         setAudioProgress(e.target.value);
@@ -156,7 +156,7 @@ export default function Player() {
             <div className="player_container">
 
                 {/* You can add 'control' as an attribute here to display a default audio player */}
-                <audio src='https://youtu.be/mSSyv5ommg0?si=QxTUL4rar9FFpz38' ref={currentAudio} onEnded={handleNextSong} onTimeUpdate={handleAudioUpdate}>
+                <audio src='https://firebasestorage.googleapis.com/v0/b/miestudio-e49b8.appspot.com/o/audio%2Fe1bcbd3e-aac4-41a9-923d-4aaee4c9a500.mp3?alt=media' ref={currentAudio} onEnded={handleNextSong} onTimeUpdate={handleAudioUpdate}>
                     Your browser does not support the audio element.
                 </audio>
 
