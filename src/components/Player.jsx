@@ -5,8 +5,8 @@ import '../styles/playerStyle.css';
 export default function Player() {
 
     const [currentMusicDetails, setCurrentMusicDetails] = useState({
-        songName: 'Chasing',
-        songArtist: 'NEFFEX',
+        songName: 'Song Title',
+        songArtist: 'Artist',
         songSrc: "",
         songAvatar: ""
     })
