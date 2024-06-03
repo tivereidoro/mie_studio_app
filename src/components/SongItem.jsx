@@ -1,5 +1,5 @@
 import React from 'react';
-import "./playerStyle.css";
+import '../styles/playerStyle.css';
 
 export default function SongItem({ songTitle = "Title", songArtist = "Artist", songDuration }) {
     return (
