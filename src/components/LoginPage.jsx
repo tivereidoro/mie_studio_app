@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./AuthPageStyle.css";
+import "..styles/AuthPageStyle.css";
 import bgImage from "../assets/music.jpg"
 // import axios from "axios";
 import axiosInstance from "../api/axiosInstance";
