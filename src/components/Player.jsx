@@ -3,8 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/playerStyle.css';
 import bgImage from "../assets/earpiece.jpg"
 import albumArt from "../assets/album_art.jpg";
-import song1 from '../assets/songs/Chasing.mp3';
-import song1Image from '../assets/Images/image1.jpg';
+
 
 export default function Player() {
 
