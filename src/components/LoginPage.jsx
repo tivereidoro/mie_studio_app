@@ -36,7 +36,7 @@ export default function LoginPage() {
 
     return (
         <div className='form_container'>
-            <img src={bgImage} alt="login image" className="login__img" />
+            {/* <img src={bgImage} alt="login image" className="login__img" /> */}
 
 
             <form action="" className="form">

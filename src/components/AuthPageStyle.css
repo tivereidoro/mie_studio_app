@@ -1,20 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-
-:root {
-  /*===== Colores =====*/
-  --first-color: #1A73E8;
-  --input-color: #80868B;
-  --border-color: #DADCE0;
-  /*===== Fuente y tipografia =====*/
-  --body-font: "Roboto", sans-serif;
-  --normal-font-size: 1rem;
-  --small-font-size: .75rem;
-}
-
 /*===== BASE =====*/
-/* *, ::before, ::after {
-  box-sizing: border-box;
-} */
+/*  */
 
 /* body {
   margin: 0;
@@ -23,10 +8,6 @@
   font-size: var(--normal-font-size);
 } */
 
-h1 {
-  margin: 0;
-}
-
 /*===== FORM =====*/
 .form_container {
   display: flex;
@@ -34,6 +15,7 @@ h1 {
   align-items: center;
   height: 100vh;
   position: relative;
+  /* background: #fff url(../assets/music.jpg) no-repeat center center/cover; */
 }
 
 .login__img {

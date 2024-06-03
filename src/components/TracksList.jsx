@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import "./playerStyle.css";
 import bgImage from "../assets/earpiece.jpg"
-import albumArt from "../assets/album_art.jpg";
 import SongItem from './SongItem';
 import axiosInstance from './api/axiosInstance';
 import { useState, useEffect } from 'react';
@@ -29,22 +29,22 @@ function TracksList() {
     }, []);
 
     return (
-        <div className='player_container'>
-            <img src={bgImage} alt="bg image" className="bg_img" />
+        <div className='tracks_container'>
 
-            <div className='player'>
-                <div className="list_body">
-                    <div className='search_bar'>
-                        <input className='search_text' type='search' />
-                    </div>
+            <div className="list_body">
+                <div className='search_bar'>
+                    <input className='search_text' type='search' />
+                </div>
 
-                    <div className='list_item'>
+                <div>
+                    <ul>
                         {tracks.map((track) => {
                             return (<SongItem songTitle={track.title} songDuration={track.duration} songArtist={'Artist'} key={track.id} />)
                         })}
-                    </div>
+                    </ul>
                 </div>
             </div>
+
         </div>
     )
 };
