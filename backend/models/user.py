@@ -11,13 +11,7 @@ class User(Base):
     """
     __tablename__ = 'users'
     email = ''
-    first_name = ''
-    last_name = ''
-
-    def __init__(self, *args, hashed=False, **kwargs):
-        super().__init__(*args, **kwargs)
-        if not hashed:
-            self.password = utility.hash_password(self.password)
+    username = ''
 
     def to_json(self) -> Dict:
         """Retrieve json value of this object

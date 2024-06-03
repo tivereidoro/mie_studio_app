@@ -6,3 +6,5 @@ pyrebase4
 bcrypt
 mutagen
 gunicorn
+pytest
+pytest-flask
