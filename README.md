@@ -78,7 +78,7 @@ To install and run the Mie-Studio music player app on your local machine, follow
 1. Clone the repository:
 
    ```groovy
-   $ git clone https://github.com/your-username/mie_studio_app.git
+   $ git clone https://github.com/tivereidoro/mie_studio_app.git
    ```
 
 2. Navigate to the project directory:
